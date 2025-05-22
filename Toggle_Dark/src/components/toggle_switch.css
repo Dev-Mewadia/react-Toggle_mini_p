@@ -1,0 +1,58 @@
+.toggle-switch {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+}
+
+.toggle-switch .switch {
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: left 0.3s ease;
+  z-index: 2;
+}
+
+.toggle-switch .switch.on {
+  left: 31px;
+  background-color: #4caf50;
+}
+
+.toggle-switch .switch.off {
+  left: 1px;
+  background-color: white;
+}
+
+.toggle-switch::before,
+.toggle-switch::after {
+  content: attr(data-off);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.toggle-switch::before {
+  content: "Off";
+  left: 10px;
+  color: #555;
+}
+
+.toggle-switch::after {
+  content: "On";
+  right: 10px;
+  color: #4caf50;
+}
